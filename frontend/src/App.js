@@ -2,7 +2,10 @@ import "./App.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const URL = "http://localhost:3000";
+const URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "";
 function App() {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState("");
